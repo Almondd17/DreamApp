@@ -3,8 +3,8 @@ import { View, Text } from "react-native";
 
 const NotificationScreen = () => {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Home Screen</Text>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
+        <Text>Notification Screen</Text>
       </View>
     );
 }

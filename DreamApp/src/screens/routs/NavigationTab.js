@@ -26,7 +26,7 @@ export default function NavigationTab() {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarLabel: () => null,
-        tabBarActiveTintColor: 'pink',
+        tabBarActiveTintColor: '#EE82EE',
       })}
     >
 
