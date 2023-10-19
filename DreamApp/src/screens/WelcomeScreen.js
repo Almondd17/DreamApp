@@ -7,7 +7,7 @@ function WelcomeScreen({ navigation }) {
       <Text>Welcome Screen</Text>
       <Button
         title='Go to home screen'
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('main')}
       />
     </View>
   );
