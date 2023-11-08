@@ -1,13 +1,15 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import ProfileTopBar from "../components/ProfileTopBar";
-import Content from "../components/ContentCollection";
+import ProfileMiddleBar from "../components/ProfileMiddleBar";
+import ProfileContent from "../components/ContentCollection";
 
 const ProfileScreen = () => {
     return (
       <View style={styles.container}>
         <ProfileTopBar />
-        <Content />
+        <ProfileMiddleBar />
+        <ProfileContent />
       </View>
     );
 }
