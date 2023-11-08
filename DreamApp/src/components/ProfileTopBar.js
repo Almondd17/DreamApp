@@ -13,15 +13,15 @@ const ProfileTopBar = () => {
                     <Image
                         source={{}} style={{ width: 80, height: 80, borderRadius: 50 }}
                     />
-                </View>
-                <View style={styles.dreamsContainer}>
-                    <Text style={styles.dreamsValue}>123</Text>
-                    <Text style={styles.dreamsText}>Dreams</Text>
-                </View>
-                <View style={styles.friendsContainer}>
-                    <Text style={styles.friendsValue}>456</Text>
-                    <Text style={styles.friendsText}>Friends</Text>
-                </View>
+                </View>            
+                <TouchableOpacity style={styles.boxContainer}>
+                    <Text style={styles.infoValue}>123</Text>
+                    <Text style={styles.infoText}>Dreams</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.boxContainer}>
+                    <Text style={styles.infoValue}>456</Text>
+                    <Text style={styles.infoText}>Friends</Text>
+                </TouchableOpacity>
             </View>
             <View style={styles.contentContainer}>
                 <Text style={styles.username}>Your Username {/* username */}</Text>
@@ -55,27 +55,15 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         overflow: "hidden",
     },
-    dreamsContainer: {
-        marginLeft: 30,
+    boxContainer: {
         alignItems: 'center',
+        marginLeft: 45,
     },
-    dreamsValue: {
+    infoValue: {
         fontSize: 16, // Adjust the font size as needed
         color: "#720e9e",
     },
-    dreamsText: {
-        fontSize: 16, // Adjust the font size as needed
-        color: "#720e9e",
-    },
-    friendsContainer: {
-        marginLeft: 30,
-        alignItems: 'center',
-    },
-    friendsValue: {
-        fontSize: 16, // Adjust the font size as needed
-        color: "#720e9e",
-    },
-    friendsText: {
+    infoText: {
         fontSize: 16, // Adjust the font size as needed
         color: "#720e9e",
     },
