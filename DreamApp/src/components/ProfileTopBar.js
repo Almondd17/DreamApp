@@ -1,14 +1,17 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import { useNavigation } from "@react-navigation/native";
 
 const ProfileTopBar = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.moreButton}>
                 <MaterialIcons name="more-vert" size={40} color={'#5A4FCF'} />
             </TouchableOpacity>
-            <View style={styles.profileContainer}>
+            <View style={styles.profileInfoContainer}>
                 <View style={styles.profileIcon}>
                     <Image
                         source={{}} style={{ width: 80, height: 80, borderRadius: 50 }}
@@ -29,20 +32,23 @@ const ProfileTopBar = () => {
                     <Text style={styles.editButtonText}>Edit Profile</Text>
                 </TouchableOpacity>
             </View>
+            <TouchableOpacity onPress={() => navigation.navigate("CreatePostModal")} style={styles.createPostButton}>
+                <MaterialIcons size={45} name="create" color={'#5A4FCF'}></MaterialIcons>
+            </TouchableOpacity>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 0.3,
+        flex: 0.35,
         padding: 25,
     },
     contentContainer: {
         alignItems: 'center',
         marginTop: 10,
     },
-    profileContainer: {
+    profileInfoContainer: {
         flexDirection: 'row',
         alignItems: 'center',
     },
@@ -86,6 +92,11 @@ const styles = StyleSheet.create({
     moreButton: {
         position: "absolute",
         top: 10,
+        right: 10,
+    },
+    createPostButton: {
+        position: "absolute",
+        bottom: 10,
         right: 10,
     },
 });
