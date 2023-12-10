@@ -9,7 +9,7 @@ const ProfileTopBar = () => {
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.moreButton}>
-                <MaterialIcons name="more-vert" size={40} color={'#5A4FCF'} />
+                <MaterialIcons name="more-vert" size={40} color={'#333'} />
             </TouchableOpacity>
             <View style={styles.profileInfoContainer}>
                 <View style={styles.profileIcon}>
@@ -33,7 +33,7 @@ const ProfileTopBar = () => {
                 </TouchableOpacity>
             </View>
             <TouchableOpacity onPress={() => navigation.navigate("CreatePostModal")} style={styles.createPostButton}>
-                <MaterialIcons size={45} name="create" color={'#5A4FCF'}></MaterialIcons>
+                <MaterialIcons size={45} name="create" color={'#DDA0DD'}></MaterialIcons>
             </TouchableOpacity>
         </View>
     );
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         height: 80,
         borderRadius: 50,
         borderWidth: 2,
-        borderColor: '#5A4FCF',
+        borderColor: '#333',
         marginBottom: 10,
         overflow: "hidden",
     },
@@ -67,16 +67,16 @@ const styles = StyleSheet.create({
     },
     infoValue: {
         fontSize: 16, // Adjust the font size as needed
-        color: "#720e9e",
+        color: "#333",
     },
     infoText: {
         fontSize: 16, // Adjust the font size as needed
-        color: "#720e9e",
+        color: "#333",
     },
     username: {
         fontSize: 24,
         fontWeight: "bold",
-        color: "#720e9e",
+        color: "#333",
     },
     editButton: {
         backgroundColor: "#DDA0DD", // Use a color that fits your design
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     createPostButton: {
         position: "absolute",
         bottom: 10,
-        right: 10,
+        right: 22.5,
     },
 });
 
