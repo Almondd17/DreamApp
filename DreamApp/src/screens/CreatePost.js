@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, StyleSheet, SafeAreaView } from "react-native";
+import { View, Text, TextInput, StyleSheet, SafeAreaView, Button } from "react-native";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 const CreatePost = () => {
     const [dreamTitle, setDreamTitle] = useState('');
@@ -17,15 +18,36 @@ const CreatePost = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.pageTitle}>Writing your dream</Text>
-            <Text style={styles.guideText}>Enter dream-post title:</Text>
-            <TextInput 
-                style={styles.textInput}
-                placeholder="MyDream"
-                placeholderTextColor={'lightgrey'}
-                value={dreamTitle}
-                onChangeText={handleInputChange}
-            ></TextInput>
-            {error ? <Text style={styles.errorText}>{error}</Text> : null}
+            <View style={styles.inputsContainer}>
+                <Text style={styles.guideText}>Enter dream-post title:</Text>
+                <TextInput 
+                    style={styles.textInput}
+                    placeholder="MyDream"
+                    placeholderTextColor={'lightgrey'}
+                    value={dreamTitle}
+                    onChangeText={handleInputChange}
+                ></TextInput>
+                {error ? <Text style={styles.errorText}>{error}</Text> : null}
+            </View>
+            <View style={styles.inputsContainer}>
+                <Text style={styles.guideText}>Where did your dream occur?</Text>
+                <BouncyCheckbox 
+                    style={styles.checkbox}
+                    text="Familiar place?"
+                    size={25}
+                    fillColor="#9ebdd0"
+                    innerIconStyle={{ borderWidth: 4 }}
+                /> 
+                <BouncyCheckbox
+                    style={styles.checkbox} 
+                    text="Somewhere completely new"
+                    size={25}
+                    fillColor="#9ebdd0"
+                    innerIconStyle={{ borderWidth: 4 }}
+                />
+                <Text></Text>
+                <Button title="Add place"/>
+            </View>
         </View>
     );
 }
@@ -35,6 +57,10 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         backgroundColor: 'white', 
+    },
+    inputsContainer: {
+        alignItems: 'center',
+        margin: 10,
     },
     pageTitle: {
         textAlign: 'center',
@@ -69,6 +95,14 @@ const styles = StyleSheet.create({
     errorText: {
         color: '#A79AFF',
         marginTop: 5,
+    },
+    checkbox: {
+        padding: 5,
+        margin: 5,
+        borderWidth: 1,
+        borderColor: 'lightgrey',
+        borderRadius: 5,
+        backgroundColor: '#f0f0f0',
     },
 });
 export default CreatePost;
